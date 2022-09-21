@@ -72,6 +72,29 @@ def list_to_string(alist, sep=", "):
     return my_str.format(*alist)
 
 
+def list_items_in_english(list_items, oxford_comma=True):
+    """Produce a list of the items formatted as they would be in an
+    English sentence.  So one item returns just the item, passing two
+    items returns "item1 and item2" and three returns "item1, item2,
+    and item3" with an optional Oxford comma.
+
+    Args:
+        list_items: list of items to format
+        oxford_comma: whether to use the oxford comma or not
+
+    Returns:
+        A formatted string
+    """
+    return ", ".join(
+        list_items[:-2]
+        + [
+            ((oxford_comma and len(list_items) != 2) * "," + " and ").join(
+                list_items[-2:]
+            )
+        ]
+    )
+
+
 def underline_string(
     text, border=None, position="below", newlines="neither", length=None
 ):
@@ -80,7 +103,8 @@ def underline_string(
 
      Args:
         text: string to underline
-        border: list containing characters to underline below and above (in that order)
+        border: list containing characters to underline below and above
+                (in that order)
         position: Underline below, above, both, or neither
         newlines: Add a newline below, above, both, or neither
         length: Optional length of underline
@@ -212,6 +236,14 @@ def main():
     print(f"{size_fmt('1234', False) = }")
     print(f"{size_fmt('234', False) = }")
     print(f"{size_fmt('1234567890', False) = }")
+
+    underline_string("Demo of list_items_in_english...", border="#", newlines="both")
+    list_items = ["one", "two", "three", "four"]
+    print(list_items_in_english(list_items[:1]))
+    print(list_items_in_english(list_items[:2]))
+    print(list_items_in_english(list_items[:3]))
+    print(list_items_in_english(list_items))
+    print(list_items_in_english(list_items, oxford_comma=False))
 
 
 if __name__ == "__main__":
