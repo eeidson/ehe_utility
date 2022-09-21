@@ -27,7 +27,7 @@ from setuptools import setup
 
 setup(
     name="ehe_utility",
-    version="0.5.0",
+    version="0.6.0",
     description="A generic utility module I use a lot",
     url="",
     author="Hunter Eidson",
