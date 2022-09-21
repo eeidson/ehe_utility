@@ -8,8 +8,6 @@ own file is a start... :)
 
 <a id="ehe_utility.comma_fmt"></a>
 
----
-
 #### comma\_fmt
 
 ```python
@@ -24,8 +22,6 @@ Returns: string
 
 <a id="ehe_utility.size_fmt"></a>
 
----
-
 #### size\_fmt
 
 ```python
@@ -37,13 +33,11 @@ Function: size_fmt
 **Arguments**:
 
 - `number` - to format as a SI size
-- `binary` - whether to use 10<sup>3</sup> or 2<sup>10</sup> definitions of suffixes
+- `binary` - whether to use 10**3 or 2**10 definitions of suffixes
 
 - `Returns` - string
 
 <a id="ehe_utility.list_to_string"></a>
-
----
 
 #### list\_to\_string
 
@@ -63,14 +57,39 @@ Function to convert list to a formatted string
 
   A formatted string
 
-<a id="ehe_utility.underline_string"></a>
+<a id="ehe_utility.list_items_in_english"></a>
 
----
+#### list\_items\_in\_english
+
+```python
+def list_items_in_english(list_items, oxford_comma=True)
+```
+
+Produce a list of the items formatted as they would be in an
+English sentence.  So one item returns just the item, passing two
+items returns "item1 and item2" and three returns "item1, item2,
+and item3" with an optional Oxford comma.
+
+**Arguments**:
+
+- `list_items` - list of items to format
+- `oxford_comma` - whether to use the oxford comma or not
+
+
+**Returns**:
+
+  A formatted string
+
+<a id="ehe_utility.underline_string"></a>
 
 #### underline\_string
 
 ```python
-def underline_string(text, border=None, position="below", newlines="neither")
+def underline_string(text,
+                     border=None,
+                     position="below",
+                     newlines="neither",
+                     length=None)
 ```
 
 Function to underline text
@@ -78,13 +97,13 @@ Function to underline text
 **Arguments**:
 
 - `text` - string to underline
-- `border` - list containing characters to underline below and above (in that order)
+- `border` - list containing characters to underline below and above
+  (in that order)
 - `position` - Underline below, above, both, or neither
 - `newlines` - Add a newline below, above, both, or neither
+- `length` - Optional length of underline
 
 <a id="ehe_utility.make_ordinal"></a>
-
----
 
 #### make\_ordinal
 
@@ -113,8 +132,6 @@ Convert an integer into its ordinal representation::
 
 <a id="ehe_utility.convert_nato"></a>
 
----
-
 #### convert\_nato
 
 ```python
@@ -134,10 +151,36 @@ Convert letters to NATO phonetic alphabet.
 
 <a id="ehe_utility.main"></a>
 
----
-
 #### main
 
 ```python
 def main()
 ```
+
+Quick and dirty wrapper for this file
+
+<a id="__init__"></a>
+
+# \_\_init\_\_
+
+############################################################################
+Program:
+__init__
+
+Author:
+Hunter Eidson / eeidson@kennesaw.edu
+
+Usage:
+__init__.py <arg1> <arg2> ... <argN>
+
+Version:
+0.1
+
+Description:
+
+
+TODO Notes:
+* Add internal tags for export control and other things as needed
+############################################################################
+@(#)__init__.py     0.1 (Kennesaw State University) eeidson    15-Sep-2022
+############################################################################
