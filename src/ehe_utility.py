@@ -78,6 +78,8 @@ def list_items_in_english(list_items, oxford_comma=True):
     items returns "item1 and item2" and three returns "item1, item2,
     and item3" with an optional Oxford comma.
 
+    Originally From: https://stackoverflow.com/a/58692463/3168105
+
     Args:
         list_items: list of items to format
         oxford_comma: whether to use the oxford comma or not
